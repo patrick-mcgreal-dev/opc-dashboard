@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Point Challenge</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header></header>
+
+    <main>
+        <div class="user">
+            <img src="res/avatar.png">
+            <div class="user-header">
+                <div class="user-details">
+                    <div class="user-greeting">Hi, Patrick!</div>
+                    <div class="user-trophies">
+                        <div class="user-trophy">
+                            <div class="user-trophy-display">
+                                <div class="user-trophy-number">0</div>
+                                <img class="user-trophy-image" src="res/trophy.svg">
+                            </div>
+                            <div class="user-trophy-text">Games facilitated</div>
+                        </div>
+                        <div class="user-trophy">
+                            <div class="user-trophy-display">
+                                <div class="user-trophy-number">0</div>
+                                <img class="user-trophy-image" src="res/trophy.svg">
+                            </div>
+                            <div class="user-trophy-text">Players involved</div>
+                        </div>
+                        <div class="user-trophy">
+                            <div class="user-trophy-display">
+                                <div class="user-trophy-number">0</div>
+                                <img class="user-trophy-image" src="res/trophy.svg">
+                            </div>
+                            <div class="user-trophy-text">Hours played</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="create-game">Create Game</div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Active Games</div>
+                    <img class="card-minmax" src="res/arrow-right.svg">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>GAME</th>
+                            <th>PLAYER LINK</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>The Puzzle</td>
+                        <td>
+                            <div class="player-link">
+                                <div class="player-url">https://games.100pointchallenge.com/000</div>
+                                <img class="player-clipboard" src="res/clipboards.svg">
+                            </div>
+                        </td>
+                        <td><div class="go-to-game">Go to Game</div></td>
+                    </tr>
+                    <tr>
+                        <td>A Christmas Puzzle</td>
+                        <td>
+                            <div class="player-link">
+                                <div class="player-url">https://games.100pointchallenge.com/000</div>
+                                <img class="player-clipboard" src="res/clipboards.svg">
+                            </div>
+                        </td>
+                        <td><div class="go-to-game">Go to Game</div></td>
+                    </tr>
+                    <tr>
+                        <td>The Ascent (Rapid)</td>
+                        <td>
+                            <div class="player-link">
+                                <div class="player-url">https://games.100pointchallenge.com/000</div>
+                                <img class="player-clipboard" src="res/clipboards.svg">
+                            </div>
+                        </td>
+                        <td><div class="go-to-game">Go to Game</div></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Created Games</div>
+                    <img class="card-minmax" src="res/arrow-right.svg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Completed Games</div>
+                    <img class="card-minmax" src="res/arrow-right.svg">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        window.onload = () => {
+
+            function trophies() {
+
+                let trophyNumbers = document.getElementsByClassName('user-trophy-number');
+                let trophyImages = document.getElementsByClassName('user-trophy-image');
+                let trophyValues = [ 12, 48, 80 ];
+
+                let trophyIndex = 0;
+
+                let time = 800;
+
+                let createTrophyInterval = (trophyIndex) => {
+
+                    let trophyNumber = trophyNumbers[trophyIndex];
+                    let trophyImage = trophyImages[trophyIndex];
+                    let value = trophyValues[trophyIndex];
+
+                    let intervalTime = time / value;
+                    let counter = 0;
+
+                    let timer = setInterval(() => {
+
+                        trophyNumber.innerText = counter;
+                        counter++;
+
+                        if (counter > value) {
+
+                            clearInterval(timer);
+                            trophyImage.classList.add('fade-in');
+
+                            if (trophyIndex < trophyNumbers.length - 1)
+                                createTrophyInterval(trophyIndex + 1);
+
+                        }
+
+                    }, intervalTime);
+
+                }
+
+                createTrophyInterval(0);
+
+            }
+
+            function cardMinMax() {
+
+                let cardsMinMax = document.getElementsByClassName('card-minmax');
+                let cardsMax = [ true, false, false ];
+
+                for (let i = 0; i < cardsMinMax.length - 1; i++) {
+
+                    if (!cardsMax[i])
+                        continue;
+
+                    cardsMinMax[i].src = 'res/arrow-down.svg';
+
+                }
+
+            }
+
+            trophies();
+            cardMinMax();
+
+        };
+
+    </script>
+
+</body>
+
+</html>
