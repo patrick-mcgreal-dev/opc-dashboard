@@ -1,0 +1,313 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+
+    margin: 0;
+    background-color: rgb(248, 248, 248);
+
+}
+
+header {
+
+    height: 80px;
+    background-color: #efefef;
+
+}
+
+main {
+
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+
+}
+
+.user {
+
+    width: 100%;
+
+    display: flex;
+    column-gap: 60px;
+    justify-items: left;
+
+}
+
+.user-header {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+}
+
+.user-details {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}
+
+.user-greeting {
+
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 42px;
+
+}
+
+.user-trophies {
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+
+}
+
+.user-trophy {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+}
+
+.user-trophy-display {
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+
+}
+
+.user-trophy-text {
+
+    font-size: 23px;
+
+}
+
+.user-trophy-number {
+
+    align-self: center;
+
+    font-size: 44px;
+
+}
+
+.user-trophy-image {
+
+    opacity: 0;
+
+    width: 60px;
+    height: 60px;
+
+}
+
+.fade-in {
+
+    animation: fade-in 1s forwards;
+
+}
+
+@keyframes fade-in {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+.create-game {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-family: 'Fredoka One', sans-serif;
+    color: white;
+
+    /* background-color: rgb(120, 232, 164); */
+    /* background-color: rgb(120, 143, 232); */
+    background-color: #938ed5;
+
+    opacity: 0.8;
+
+}
+
+.create-game:hover {
+
+    cursor: pointer;
+    opacity: 1;
+
+}
+
+.cards {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}
+
+.card {
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    border-radius: 10px;
+
+}
+
+.card-header {
+
+    display: flex;
+
+}
+
+.card-title {
+
+    font-size: 24px;
+    flex-grow: 1;
+
+}
+
+.card-minmax {
+
+    width: 30px;
+
+}
+
+.card-minmax:hover {
+
+    cursor: pointer;
+
+}
+
+table {
+    
+    width: 100%;
+    margin-top: 15px;
+
+    text-align: left;
+    border-collapse: collapse;
+
+}
+
+th {
+
+    padding: 16px 12px;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+
+    border-bottom: 1px solid #e5e5e5;
+
+}
+
+td {
+
+    padding: 16px 12px;
+
+}
+
+table tr:not(:first-child) {
+
+    border-top: 1px solid #e5e5e5;
+
+}
+
+.player-link {
+
+    width: 320px;
+    height: 35px;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.player-url {
+
+    overflow-x: hidden;
+
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #e5e5e5;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f7f7f7;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.player-clipboard {
+
+    width: 20px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #e5e5e5;
+
+    background-color: white;
+
+    opacity: 0.6;
+
+}
+
+.player-clipboard:hover {
+
+    cursor: pointer;
+    opacity: 1;
+
+}
+
+.go-to-game {
+
+    float: right;
+
+    width: 120px;
+    height: 35px;
+
+    border-radius: 5px;
+    color: white;
+    background-color: #938ed5;
+    opacity: 0.8;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.go-to-game:hover {
+
+    cursor: pointer;
+    opacity: 1;
+
+}
