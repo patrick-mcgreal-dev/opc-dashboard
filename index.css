@@ -1,3 +1,7 @@
+/* 
+    ============================== BASE
+*/
+
 * {
     font-family: 'Quicksand', sans-serif;
 }
@@ -9,12 +13,20 @@ body {
 
 }
 
+/* 
+    ============================== HEADER
+*/
+
 header {
 
     height: 80px;
     background-color: #efefef;
 
 }
+
+/* 
+    ============================== MAIN
+*/
 
 main {
 
@@ -30,6 +42,10 @@ main {
     row-gap: 50px;
 
 }
+
+/* 
+    ============================== USER
+*/
 
 .user {
 
@@ -154,6 +170,10 @@ main {
 
 }
 
+/* 
+    ============================== CARDS
+*/
+
 .cards {
 
     width: 100%;
@@ -201,6 +221,10 @@ main {
 
 }
 
+/* 
+    ============================== TABLE
+*/
+
 table {
     
     width: 100%;
@@ -234,6 +258,10 @@ table tr:not(:first-child) {
     border-top: 1px solid #e5e5e5;
 
 }
+
+/* 
+    ============================== GAME SESSION
+*/
 
 .player-link {
 
