@@ -12048,8 +12048,17 @@ h1 {
   width: 25%;
   background-color: #fc8ba1;
   border-radius: 10px 0 0 10px;
+  animation: 1s ease-out 0s 1 slide-in;
 }
 
+@keyframes slide-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
 .player-link {
   width: 320px;
   height: 35px;

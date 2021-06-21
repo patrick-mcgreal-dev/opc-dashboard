@@ -84,9 +84,16 @@ h1 {
         width: 25%;
         background-color: rgb(252, 139, 161);
         border-radius: $border-rounded-border-radius 0 0 $border-rounded-border-radius;
+        
+        animation: 1s ease-out 0s 1 slide-in;
 
     }
 
+}
+
+@keyframes slide-in {
+    0% { width: 0; }
+    100% { width: 25% }
 }
 
 // ==================================================================
