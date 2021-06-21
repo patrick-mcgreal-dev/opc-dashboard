@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>100 Point Challenge</title>
+    <script src="node_modules/uikit/dist/js/uikit.min.js"></script>
+    <script src="node_modules/uikit/dist/js/uikit-icons.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,166 +19,216 @@
 
     <header></header>
 
-    <main>
-        <div class="user">
-            <img src="res/avatar.png">
-            <div class="user-header">
-                <div class="user-details">
-                    <div class="user-greeting">Hi, Patrick!</div>
-                    <div class="user-trophies">
-                        <div class="user-trophy">
-                            <div class="user-trophy-display">
-                                <div class="user-trophy-number">0</div>
-                                <img class="user-trophy-image" src="res/trophy.svg">
-                            </div>
-                            <div class="user-trophy-text">Games facilitated</div>
-                        </div>
-                        <div class="user-trophy">
-                            <div class="user-trophy-display">
-                                <div class="user-trophy-number">0</div>
-                                <img class="user-trophy-image" src="res/trophy.svg">
-                            </div>
-                            <div class="user-trophy-text">Players involved</div>
-                        </div>
-                        <div class="user-trophy">
-                            <div class="user-trophy-display">
-                                <div class="user-trophy-number">0</div>
-                                <img class="user-trophy-image" src="res/trophy.svg">
-                            </div>
-                            <div class="user-trophy-text">Hours played</div>
-                        </div>
-                    </div>
+    <div class="uk-container">
+        <div class="uk-section">
+            <div class="uk-grid">
+                <div class="uk-width-1-4">
+                    <img src="res/avatar.png">
                 </div>
-                <div class="create-game">Create Game</div>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Active Games</div>
-                    <img class="card-minmax" src="res/arrow-right.svg">
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>GAME</th>
-                            <th>PLAYER LINK</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>The Puzzle</td>
-                        <td>
-                            <div class="player-link">
-                                <div class="player-url">https://games.100pointchallenge.com/000</div>
-                                <img class="player-clipboard" src="res/clipboards.svg">
-                            </div>
-                        </td>
-                        <td><div class="go-to-game">Go to Game</div></td>
-                    </tr>
-                    <tr>
-                        <td>A Christmas Puzzle</td>
-                        <td>
-                            <div class="player-link">
-                                <div class="player-url">https://games.100pointchallenge.com/000</div>
-                                <img class="player-clipboard" src="res/clipboards.svg">
-                            </div>
-                        </td>
-                        <td><div class="go-to-game">Go to Game</div></td>
-                    </tr>
-                    <tr>
-                        <td>The Ascent (Rapid)</td>
-                        <td>
-                            <div class="player-link">
-                                <div class="player-url">https://games.100pointchallenge.com/000</div>
-                                <img class="player-clipboard" src="res/clipboards.svg">
-                            </div>
-                        </td>
-                        <td><div class="go-to-game">Go to Game</div></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Created Games</div>
-                    <img class="card-minmax" src="res/arrow-right.svg">
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Completed Games</div>
-                    <img class="card-minmax" src="res/arrow-right.svg">
+                <div class="uk-width-3-4">
+                    <h1>Hi, Patrick!</h1>
                 </div>
             </div>
         </div>
-    </main>
+        <div class="uk-section-xsmall uk-section-default uk-border-rounded uk-margin-bottom">
+            <div class="uk-container">
+                <ul uk-tab class="uk-text-large">
+                    <li class="uk-active"><a href="">Games</a></li>
+                    <li><a href="#">Subscriptions</a></li>
+                </ul>
+                <ul class="uk-switcher uk-margin-medium">
+                    <li>
+                        <a class="uk-button uk-button-primary uk-border-rounded" href="">Create Game</a>
+                        <ul uk-tab class="uk-margin-medium">
+                            <li class="uk-active"><a href="">Active</a></li>
+                            <li><a href="#">Created</a></li>
+                            <li><a href="#">Completed</a></li>
+                        </ul>
+                        <ul class="uk-switcher">
+                            <li>
+                                <table class="uk-table uk-table-divider uk-table-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Game</th>
+                                            <th>Notes</th>
+                                            <th>Player Link</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>The Puzzle</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="player-link">
+                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>The Hunt</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="player-link">
+                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>The Trip</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="player-link">
+                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                <table class="uk-table uk-table-divider uk-table-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Game</th>
+                                            <th>Notes</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>The Riddle</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
+                                    </tbody>
+                                    <tbody>
+                                        <td>The Ascent</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                <table class="uk-table uk-table-divider uk-table-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Game</th>
+                                            <th>Notes</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>A Christmas Puzzle</td>
+                                        <td class="uk-flex note">
+                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                            <div class="uk-flex uk-flex-around edit-note-buttons">
+                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                            </div>
+                                        </td>
+                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Get Results</a></td>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>subscriptions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script>
 
-        window.onload = () => {
+        function editNote_init(e) {
 
-            function trophies() {
+            let editButton = e.querySelector('.edit-note-button');
+            let editButtons = e.querySelector('.edit-note-buttons');
+            let inputField = e.querySelector('input');
 
-                let trophyNumbers = document.getElementsByClassName('user-trophy-number');
-                let trophyImages = document.getElementsByClassName('user-trophy-image');
-                let trophyValues = [ 12, 48, 80 ];
+            editButton.style.display = 'none';
+            editButtons.style.display = 'flex';
 
-                let trophyIndex = 0;
+            inputField.disabled = false;
+            inputField.focus();
 
-                let time = 800;
+        }
 
-                let createTrophyInterval = (trophyIndex) => {
+        function editNote_cancel(e) {
 
-                    let trophyNumber = trophyNumbers[trophyIndex];
-                    let trophyImage = trophyImages[trophyIndex];
-                    let value = trophyValues[trophyIndex];
+            let editButton = e.querySelector('.edit-note-button');
+            let editButtons = e.querySelector('.edit-note-buttons');
+            let inputField = e.querySelector('input');
 
-                    let intervalTime = time / value;
-                    let counter = 0;
+            editButtons.style.display = 'none';
+            inputField.disabled = true;
+            editButton.style.display = 'block';
 
-                    let timer = setInterval(() => {
+        }
 
-                        trophyNumber.innerText = counter;
-                        counter++;
+        function editNote_save(e) {
 
-                        if (counter > value) {
+            let editButton = e.querySelector('.edit-note-button');
+            let editButtons = e.querySelector('.edit-note-buttons');
+            let inputField = e.querySelector('input');
 
-                            clearInterval(timer);
-                            trophyImage.classList.add('fade-in');
+            editButtons.style.display = 'none';
+            inputField.disabled = true;
+            editButton.style.display = 'block';
 
-                            if (trophyIndex < trophyNumbers.length - 1)
-                                createTrophyInterval(trophyIndex + 1);
+        }
 
-                        }
+        function playerUrl_click(e) {
 
-                    }, intervalTime);
+            e.select();
 
-                }
+        }
 
-                createTrophyInterval(0);
+        function copyLink(e) {
 
-            }
+            e.setAttribute('uk-tooltip', 'Copied!');
+            UIkit.tooltip(e).show();
 
-            function cardMinMax() {
-
-                let cardsMinMax = document.getElementsByClassName('card-minmax');
-                let cardsMax = [ true, false, false ];
-
-                for (let i = 0; i < cardsMinMax.length - 1; i++) {
-
-                    if (!cardsMax[i])
-                        continue;
-
-                    cardsMinMax[i].src = 'res/arrow-down.svg';
-
-                }
-
-            }
-
-            trophies();
-            cardMinMax();
-
-        };
+        }
 
     </script>
 
