@@ -28,8 +28,8 @@ $global-control-height: 35px;
 
 // default variables and mixins import
 
-@import "node_modules/uikit/src/scss/variables-theme.scss";
-@import "node_modules/uikit/src/scss/mixins-theme.scss";
+@import "lib/uikit/src/scss/variables-theme.scss";
+@import "lib/uikit/src/scss/mixins-theme.scss";
 
 // custom mixins
 
@@ -37,7 +37,7 @@ $button-font-size: $global-font-size;
 
 // UIkit import
 
-@import "node_modules/uikit/src/scss/uikit-theme.scss";
+@import "lib/uikit/src/scss/uikit-theme.scss";
 
 // ==================================================================
 // Base
