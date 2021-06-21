@@ -25,155 +25,154 @@
                 <div class="uk-width-1-4">
                     <img src="res/avatar.png">
                 </div>
-                <div class="uk-width-3-4">
-                    <h1>Hi, Patrick!</h1>
+                <div class="uk-width-3-4 uk-flex uk-flex-column">
+                    <div><h1>Hi, Patrick!</h1></div>
+                    <div class="uk-margin-top">hello</div>
                 </div>
             </div>
         </div>
-        <div class="uk-section-xsmall uk-section-default uk-border-rounded uk-margin-bottom">
-            <div class="uk-container">
-                <ul uk-tab class="uk-text-large">
-                    <li class="uk-active"><a href="">Games</a></li>
-                    <li><a href="#">Subscriptions</a></li>
-                </ul>
-                <ul class="uk-switcher uk-margin-medium">
-                    <li>
-                        <a class="uk-button uk-button-primary uk-border-rounded" href="">Create Game</a>
-                        <ul uk-tab class="uk-margin-medium">
-                            <li class="uk-active"><a href="">Active</a></li>
-                            <li><a href="#">Created</a></li>
-                            <li><a href="#">Completed</a></li>
-                        </ul>
-                        <ul class="uk-switcher">
-                            <li>
-                                <table class="uk-table uk-table-divider uk-table-middle">
-                                    <thead>
-                                        <tr>
-                                            <th>Game</th>
-                                            <th>Notes</th>
-                                            <th>Player Link</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <td>The Puzzle</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="player-link">
-                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
-                                    </tbody>
-                                    <tbody>
-                                        <td>The Hunt</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="player-link">
-                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
-                                    </tbody>
-                                    <tbody>
-                                        <td>The Trip</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="player-link">
-                                                <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                                <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
-                                    </tbody>
-                                </table>
-                            </li>
-                            <li>
-                                <table class="uk-table uk-table-divider uk-table-middle">
-                                    <thead>
-                                        <tr>
-                                            <th>Game</th>
-                                            <th>Notes</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <td>The Riddle</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
-                                    </tbody>
-                                    <tbody>
-                                        <td>The Ascent</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
-                                    </tbody>
-                                </table>
-                            </li>
-                            <li>
-                                <table class="uk-table uk-table-divider uk-table-middle">
-                                    <thead>
-                                        <tr>
-                                            <th>Game</th>
-                                            <th>Notes</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <td>A Christmas Puzzle</td>
-                                        <td class="uk-flex note">
-                                            <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
-                                            <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
-                                            <div class="uk-flex uk-flex-around edit-note-buttons">
-                                                <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
-                                                <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
-                                            </div>
-                                        </td>
-                                        <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Get Results</a></td>
-                                    </tbody>
-                                </table>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>subscriptions</li>
-                </ul>
-            </div>
+        <div class="uk-margin-bottom uk-card uk-card-body uk-card-default uk-border-rounded">
+            <ul uk-tab class="uk-text-large">
+                <li class="uk-active"><a href="">Games</a></li>
+                <li><a href="#">Subscriptions</a></li>
+            </ul>
+            <ul class="uk-switcher uk-margin-medium">
+                <li>
+                    <a class="uk-button uk-button-primary uk-border-rounded" href="">Create Game</a>
+                    <ul uk-tab class="uk-margin-medium">
+                        <li class="uk-active"><a href="">Active</a></li>
+                        <li><a href="#">Created</a></li>
+                        <li><a href="#">Completed</a></li>
+                    </ul>
+                    <ul class="uk-switcher">
+                        <li>
+                            <table class="uk-table uk-table-divider uk-table-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Game</th>
+                                        <th>Notes</th>
+                                        <th>Player Link</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>The Puzzle</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="player-link">
+                                            <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                            <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                </tbody>
+                                <tbody>
+                                    <td>The Hunt</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="player-link">
+                                            <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                            <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                </tbody>
+                                <tbody>
+                                    <td>The Trip</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="player-link">
+                                            <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
+                                            <img class="player-clipboard" src="res/clipboards.svg" width="22" height="22" onclick="copyLink(this)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Go to Game</a></td>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table class="uk-table uk-table-divider uk-table-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Game</th>
+                                        <th>Notes</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>The Riddle</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
+                                </tbody>
+                                <tbody>
+                                    <td>The Ascent</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Start Game</a></td>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table class="uk-table uk-table-divider uk-table-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Game</th>
+                                        <th>Notes</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>A Christmas Puzzle</td>
+                                    <td class="uk-flex note">
+                                        <input type="text" value="" placeholder="Add notes about your game here" class="uk-input edit-note-input" onfocusout="editNote_cancel(this.parentElement)" disabled>
+                                        <img src="res/edit.svg" width="22" height="22" uk-svg class="edit-note-button" onclick="editNote_init(this.parentElement)">
+                                        <div class="uk-flex uk-flex-around edit-note-buttons">
+                                            <img src="res/check.svg" width="22" height="22" uk-svg onclick="editNote_save(this.parentElement.parentElement)">
+                                            <img src="res/cross.svg" width="22" height="22" uk-svg onclick="editNote_cancel(this.parentElement.parentElement)">
+                                        </div>
+                                    </td>
+                                    <td><a class="uk-button uk-button-secondary uk-border-rounded game-action" href="">Get Results</a></td>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                </li>
+                <li>subscriptions</li>
+            </ul>
         </div>
     </div>
 

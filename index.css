@@ -2627,7 +2627,7 @@ select.uk-form-width-xsmall {
  * Default
  */
 .uk-section-default {
-  background: white;
+  background: #fafafa;
 }
 
 /*
@@ -2827,11 +2827,6 @@ select.uk-form-width-xsmall {
     margin-right: -40px;
   }
 }
-.uk-container .uk-container {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 /* ========================================================================
    Component: Tile
  ========================================================================== */
@@ -3057,7 +3052,7 @@ select.uk-form-width-xsmall {
  * Note: Header and Footer are only implemented for the default style
  */
 .uk-card-default {
-  background: #fafafa;
+  background: white;
   color: #666;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -3067,7 +3062,7 @@ select.uk-form-width-xsmall {
 }
 
 .uk-card-default.uk-card-hover:hover {
-  background-color: #fafafa;
+  background-color: white;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 
@@ -12029,8 +12024,6 @@ h3 {
 }
 body {
   margin: 0;
-  background-image: url(res/background.png);
-  background-size: 150px 150px;
 }
 
 header {

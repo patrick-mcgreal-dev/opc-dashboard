@@ -17,7 +17,7 @@ $base-em-color: black;
 // me: custom variables/overwrites
 
 $global-background: #fafafa;
-$section-default-background: white;
+$card-default-background: white;
 $border-rounded-border-radius: 10px;
 $tab-item-font-size: inherit;
 $tab-item-border-width: 2px;
@@ -35,17 +35,6 @@ $global-control-height: 35px;
 
 $button-font-size: $global-font-size;
 
-@mixin hook-container-misc() {
-
-    .uk-container {
-        .uk-container {
-            padding-left: $global-medium-gutter;
-            padding-right: $global-medium-gutter;
-        }
-    }
-
-}
-
 // UIkit import
 
 @import "node_modules/uikit/src/scss/uikit-theme.scss";
@@ -57,8 +46,8 @@ $button-font-size: $global-font-size;
 body {
 
     margin: 0;
-    background-image: url(res/background.png);
-    background-size: 150px 150px;
+    // background-image: url(res/background.png);
+    // background-size: 150px 150px;
 
 }
 
@@ -162,13 +151,13 @@ h1 {
 
     input {
 
-        background-color: $section-default-background;
+        background-color: $card-default-background;
         border: none;
         padding: 0;
 
         &:focus {
 
-            background-color: $section-default-background;
+            background-color: $card-default-background;
             border-bottom: 1px solid black;
 
         }
@@ -177,7 +166,7 @@ h1 {
 
     input:disabled {
 
-        background-color: $section-default-background;
+        background-color: $card-default-background;
 
     }
 
