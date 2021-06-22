@@ -12115,9 +12115,6 @@ h1 {
   background-color: white;
 }
 .note .edit-note-button {
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: content-box;
   opacity: 0;
   transition: opacity 0.1s;
 }
@@ -12126,16 +12123,13 @@ h1 {
   opacity: 1;
 }
 .note .edit-note-buttons {
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: content-box;
   display: none;
 }
-.note .edit-note-buttons img {
+.note .edit-note-buttons span {
   opacity: 0.6;
   transition: opacity 0.1s;
 }
-.note .edit-note-buttons img:hover {
+.note .edit-note-buttons span:hover {
   cursor: pointer;
   opacity: 1;
 }

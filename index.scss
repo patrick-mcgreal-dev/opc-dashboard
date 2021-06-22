@@ -200,10 +200,10 @@ h1 {
 
     .edit-note-button {
 
-        padding-left: $global-small-gutter;
-        padding-right: $global-small-gutter;
+        // padding-left: $global-small-gutter;
+        // padding-right: $global-small-gutter;
 
-        box-sizing: content-box;
+        // box-sizing: content-box;
 
         opacity: 0;
         transition: opacity 0.1s;
@@ -219,21 +219,21 @@ h1 {
 
     .edit-note-buttons {
 
-        padding-left: $global-small-gutter;
-        padding-right: $global-small-gutter;
+        // padding-left: $global-small-gutter;
+        // padding-right: $global-small-gutter;
 
-        box-sizing: content-box;
+        // box-sizing: content-box;
 
         display: none;
 
-        img {
+        span {
 
             opacity: 0.6;
             transition: opacity 0.1s;
 
         }
 
-        img:hover {
+        span:hover {
 
             cursor: pointer;
             opacity: 1;
