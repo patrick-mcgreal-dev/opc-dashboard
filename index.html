@@ -78,7 +78,7 @@
                                     <td>
                                         <div class="player-link">
                                             <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="copyLink(this)"></span>
+                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="playerUrl_copy(this)"></span>
                                         </div>
                                     </td>
                                     <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Go to Game</a></td>
@@ -96,7 +96,7 @@
                                     <td>
                                         <div class="player-link">
                                             <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="copyLink(this)"></span>
+                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="playerUrl_copy(this)"></span>
                                         </div>
                                     </td>
                                     <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Go to Game</a></td>
@@ -114,7 +114,7 @@
                                     <td>
                                         <div class="player-link">
                                             <input type="text" value="https://games.100pointchallenge.com/000" class="player-url" onclick="playerUrl_click(this)" readonly>
-                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="copyLink(this)"></span>
+                                            <span uk-icon="icon: copy" class="player-clipboard uk-flex uk-flex-middle" onclick="playerUrl_copy(this)"></span>
                                         </div>
                                     </td>
                                     <td><a class="uk-button uk-button-default uk-border-rounded game-action" href="">Go to Game</a></td>
@@ -304,12 +304,27 @@
 
         }
 
-        function copyLink(e) {
+        function playerUrl_copy(e) {
 
             e.setAttribute('uk-tooltip', 'Copied!');
             UIkit.tooltip(e).show();
 
         }
+
+        let games = [
+
+            { title: "Long Walks on the Beach", description: "Use word association to figure out your team identity." },
+            { title: "The Ascent", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle." },
+            { title: "The Ascent (Rapid)", description: "Combine clues from five smaller puzzles to reveal the key to the master puzzle." },
+            { title: "The Hunt", description: "Locate the master puzzle by combining clues from seven smaller puzzles." },
+            { title: "The Puzzle", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle." },
+            { title: "The Puzzle LITE", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle." },
+            { title: "The Puzzle PRO", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle." },
+            { title: "The Riddle", description: "Combine clues from ten smaller puzzles to reveal the key to the riddle." },
+            { title: "The Trip", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle." },
+            { title: "A Christmas Puzzle", description: "Solve ten puzzles to complete the Christmas List." },
+
+        ];
 
     </script>
 
