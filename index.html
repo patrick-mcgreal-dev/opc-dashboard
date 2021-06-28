@@ -226,7 +226,7 @@
                             </div>
                         </form>
                         <div class="uk-margin uk-text-right">
-                            <button class="uk-button uk-button-primary uk-border-rounded" type="submit" onclick="chooseGame_clearFilter()">Clear Filter</button>
+                            <button class="uk-button uk-button-primary uk-border-rounded" type="submit" onclick="chooseGame_clearFilter()" uk-filter-control>Clear Filter</button>
                         </div>
                     </div>
                     <div id="game-grid" class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center uk-flex-center uk-grid-match" uk-filter="target: .games" uk-grid>
@@ -349,25 +349,15 @@
 
         function chooseGame_clearFilter() {
 
-            // document.querySelector('.filter-feel').selectedIndex = 0;
-
-            // UIkit.filter(document.querySelector('.filter-feel'), {
-            //     target: document.querySelector('#game-grid'),
-            //     selActive: document.querySelector('.filter-feel option:first-child'),
-            //     animation: 'slide',
-            //     duration: 250
-            // });
-
-            // this is very hacky, but the above code doesn't trigger the filter animation
-
-            document.querySelector('.filter-feel').options[0].click();
             document.querySelector('.filter-feel').selectedIndex = 0;
-            
-            document.querySelector('.filter-time').options[0].click();
             document.querySelector('.filter-time').selectedIndex = 0;
-
-            document.querySelector('.filter-size').options[0].click();
             document.querySelector('.filter-size').selectedIndex = 0;
+
+        }
+
+        function chooseGame_textFilter() {
+
+            // https://github.com/uikit/uikit/issues/1248
 
         }
 
