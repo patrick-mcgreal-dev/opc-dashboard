@@ -192,97 +192,97 @@
                 <h1 class="uk-modal-title">Choose your game!</h1>
             </div>
             <div class="uk-modal-body" uk-overflow-auto>
-                <div class="uk-margin uk-card uk-card-body uk-card-default uk-card-small uk-border-rounded">
-                    <form class="uk-flex" uk-grid>
-                        <div class="uk-width-1-3">
-                            <label class="uk-form-label">I want my team to feel</label>
-                            <select class="uk-select">
-                                <option value="">Open and Invested</option>
-                                <option value="">Focussed and Driven</option>
-                                <option value="">Relaxed and Positive</option>
-                            </select>
-                        </div>
-                        <div class="uk-width-1-3">
-                            <label class="uk-form-label">Time available</label>
-                            <select class="uk-select">
-                                <option value="">15 minutes</option>
-                                <option value="">30 minutes</option>
-                                <option value="">45 minutes</option>
-                                <option value="">60+ minutes</option>
-                            </select>
-                        </div>
-                        <div class="uk-width-1-3">
-                            <label class="uk-form-label">Group size</label>
-                            <select class="uk-select">
-                                <option value="">&#60; 20 people</option>
-                                <option value="">20 - 50 people</option>
-                                <option value="">&#62; 50 people</option>
-                            </select>
-                        </div>
-                    </form>
-                    <div class="uk-margin uk-text-right">
-                        <button class="uk-button uk-button-primary uk-border-rounded" type="submit">Search Games</button>
-                    </div>
-                </div>
-                <div id="game-grid" class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center uk-flex-center uk-grid-match" uk-grid>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">Long Walks on the Beach</div>
-                            <p class="uk-text-left">Use word association to figure out your team identity.</p>
+                <div uk-filter="target: #game-grid">
+                    <div class="uk-margin uk-card uk-card-body uk-card-default uk-card-small uk-border-rounded">
+                        <form class="uk-flex" uk-grid>
+                            <div class="uk-width-1-3">
+                                <label class="uk-form-label">I want my team to feel</label>
+                                <select class="uk-select filter-feel">
+                                    <option uk-filter-control="filter: [data-feel*='0']; group: data-feel">-</option>
+                                    <option uk-filter-control="filter: [data-feel*='1']; group: data-feel">Open and Invested</option>
+                                    <option uk-filter-control="filter: [data-feel*='2']; group: data-feel">Focused and Driven</option>
+                                    <option uk-filter-control="filter: [data-feel*='3']; group: data-feel">Relaxed and Positive</option>
+                                    <option uk-filter-control="filter: [data-feel*='4']; group: data-feel">Energised & ready to start something!</option>
+                                </select>
+                            </div>
+                            <div class="uk-width-1-3">
+                                <label class="uk-form-label">Time available</label>
+                                <select class="uk-select filter-time">
+                                    <option uk-filter-control="filter: [data-time*='0']; group: data-time">-</option>
+                                    <option uk-filter-control="filter: [data-time*='1']; group: data-time">15 minutes</option>
+                                    <option uk-filter-control="filter: [data-time*='2']; group: data-time">30 minutes</option>
+                                    <option uk-filter-control="filter: [data-time*='3']; group: data-time">45 minutes</option>
+                                    <option uk-filter-control="filter: [data-time*='4']; group: data-time">60+ minutes</option>
+                                </select>
+                            </div>
+                            <div class="uk-width-1-3">
+                                <label class="uk-form-label">Group size</label>
+                                <select class="uk-select filter-size">
+                                    <option uk-filter-control="filter: [data-size='0'] group: data-size">-</option>
+                                    <option uk-filter-control="filter: [data-size*='1']; group: data-size">&#60; 20 people</option>
+                                    <option uk-filter-control="filter: [data-size*='2']; group: data-size">20 - 50 people</option>
+                                    <option uk-filter-control="filter: [data-size*='3']; group: data-size">&#62; 50 people</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div class="uk-margin uk-text-right">
+                            <button class="uk-button uk-button-primary uk-border-rounded" type="submit" onclick="chooseGame_clearFilter()">Clear Filter</button>
                         </div>
                     </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Ascent</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                    <div id="game-grid" class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center uk-flex-center uk-grid-match" uk-filter="target: .games" uk-grid>
+                        <div data-feel="0 1 3" data-time="0 2 3" data-size="0 1">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">Long Walks on the Beach</div>
+                                <p class="uk-text-left">Use word association to figure out your team identity.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Ascent (Rapid)</div>
-                            <p class="uk-text-left">Combine clues from five smaller puzzles to reveal the key to the master puzzle.</p>
+                        <div data-feel="0 1 2" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Ascent</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Hunt</div>
-                            <p class="uk-text-left">Locate the master puzzle by combining clues from seven smaller puzzles.</p>
+                        <div data-feel="0 2 3" data-time="0 1 2" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Ascent (Rapid)</div>
+                                <p class="uk-text-left">Combine clues from five smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Puzzle</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                        <div data-feel="0 2 4" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Hunt</div>
+                                <p class="uk-text-left">Locate the master puzzle by combining clues from seven smaller puzzles.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Puzzle LITE</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                        <div data-feel="0 1 2" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Puzzle</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Puzzle PRO</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                        <div data-feel="0 1 3" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Puzzle LITE</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Riddle</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the riddle.</p>
+                        <div data-feel="0 2" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Puzzle PRO</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">The Trip</div>
-                            <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                        <div data-feel="0 1 3" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Riddle</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the riddle.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-                            <div class="uk-text-large uk-text-left">A Christmas Puzzle</div>
-                            <p class="uk-text-left">Solve ten puzzles to complete the Christmas List.</p>
+                        <div data-feel="0 1 4" data-time="0 3 4" data-size="0 1 2 3">
+                            <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
+                                <div class="uk-text-large uk-text-left">The Trip</div>
+                                <p class="uk-text-left">Combine clues from ten smaller puzzles to reveal the key to the master puzzle.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,13 +293,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <template id="game-template">
-        <div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-            <div class="game-template-title uk-text-large uk-text-left"></div>
-            <p class="game-template-description uk-text-left"></p>
-        </div>
-    </template> -->
 
     <script>
 
@@ -354,41 +347,29 @@
 
         }
 
-        let games = [
+        function chooseGame_clearFilter() {
 
-            { id: 0, title: "The Puzzle", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'open', 'focused' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 1, title: "The Puzzle LITE", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'open', 'relaxed' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 2, title: "The Puzzle PRO", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'focused' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 3, title: "The Riddle", description: "Combine clues from ten smaller puzzles to reveal the key to the riddle.", tags: { feel: [ 'open', 'relaxed' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 4, title: "The Trip", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'open', 'energised' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 5, title: "The Hunt", description: "Locate the master puzzle by combining clues from seven smaller puzzles.", tags: { feel: [ 'focused', 'energised' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 6, title: "The Ascent", description: "Combine clues from ten smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'open', 'focused' ], time: [ '45', '60' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 7, title: "The Ascent (Rapid)", description: "Combine clues from five smaller puzzles to reveal the key to the master puzzle.", tags: { feel: [ 'focused', 'energised' ], time: [ '15', '30' ], size: [ '<20', '20-50', '>50' ] } },
-            { id: 8, title: "Long Walks on the Beach", description: "Use word association to figure out your team identity.", tags: { feel: [ 'open', 'relaxed' ], time: [ '30', '45' ], size: [ '<20' ] } },
+            // document.querySelector('.filter-feel').selectedIndex = 0;
 
-        ];
+            // UIkit.filter(document.querySelector('.filter-feel'), {
+            //     target: document.querySelector('#game-grid'),
+            //     selActive: document.querySelector('.filter-feel option:first-child'),
+            //     animation: 'slide',
+            //     duration: 250
+            // });
 
-        // function insertGames() {
+            // this is very hacky, but the above code doesn't trigger the filter animation
 
-        //     let gameGrid = document.querySelector('#game-grid');
+            document.querySelector('.filter-feel').options[0].click();
+            document.querySelector('.filter-feel').selectedIndex = 0;
+            
+            document.querySelector('.filter-time').options[0].click();
+            document.querySelector('.filter-time').selectedIndex = 0;
 
-        //     for (let game of games) {
+            document.querySelector('.filter-size').options[0].click();
+            document.querySelector('.filter-size').selectedIndex = 0;
 
-        //         let gameTemplate = document.querySelector('#game-template').content.cloneNode(true);
-
-        //         let titleElem = gameTemplate.querySelector('.game-template-title');
-        //         titleElem.innerText = game.title;
-
-        //         let descriptionElem = gameTemplate.querySelector('.game-template-description');
-        //         descriptionElem.innerText = game.description;
-
-        //         gameGrid.appendChild(gameTemplate);
-
-        //     }
-
-        // }
-
-        // insertGames();
+        }
 
     </script>
 
