@@ -218,7 +218,7 @@
                             <div class="uk-width-1-3">
                                 <label class="uk-form-label">Group size</label>
                                 <select class="uk-select filter-size">
-                                    <option uk-filter-control="filter: [data-size='0'] group: data-size">-</option>
+                                    <option uk-filter-control="filter: [data-size*='0']; group: data-size">-</option>
                                     <option uk-filter-control="filter: [data-size*='1']; group: data-size">&#60; 20 people</option>
                                     <option uk-filter-control="filter: [data-size*='2']; group: data-size">20 - 50 people</option>
                                     <option uk-filter-control="filter: [data-size*='3']; group: data-size">&#62; 50 people</option>
@@ -226,7 +226,7 @@
                             </div>
                         </form>
                         <div class="uk-margin uk-text-right">
-                            <button class="uk-button uk-button-primary uk-border-rounded" type="submit" onclick="chooseGame_clearFilter()" uk-filter-control>Clear Filter</button>
+                            <button class="uk-button uk-button-primary uk-border-rounded" type="submit" onclick="chooseGame_resetFilterOptions()" uk-filter-control>Clear Filter</button>
                         </div>
                     </div>
                     <div id="game-grid" class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center uk-flex-center uk-grid-match" uk-filter="target: .games" uk-grid>
@@ -347,13 +347,39 @@
 
         }
 
-        function chooseGame_clearFilter() {
+        function chooseGame_resetFilterOptions() {
 
             document.querySelector('.filter-feel').selectedIndex = 0;
             document.querySelector('.filter-time').selectedIndex = 0;
             document.querySelector('.filter-size').selectedIndex = 0;
 
         }
+
+        function chooseGame_manuallyClearFilter() {
+
+            UIkit.filter(document.querySelector('.filter-feel'), {
+                target: document.querySelector('#game-grid'),
+                selActive: document.querySelector('.filter-feel option:first-child')
+            });
+
+            UIkit.filter(document.querySelector('.filter-time'), {
+                target: document.querySelector('#game-grid'),
+                selActive: document.querySelector('.filter-time option:first-child')
+            });
+
+            UIkit.filter(document.querySelector('.filter-size'), {
+                target: document.querySelector('#game-grid'),
+                selActive: document.querySelector('.filter-size option:first-child')
+            });
+
+        }
+
+        document.querySelector('#game-chooser').addEventListener('hidden', () => {
+
+            chooseGame_manuallyClearFilter();
+            chooseGame_resetFilterOptions();
+            
+        })
 
         function chooseGame_textFilter() {
 
