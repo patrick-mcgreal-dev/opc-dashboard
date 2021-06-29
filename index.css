@@ -12132,3 +12132,12 @@ h1 {
   cursor: pointer;
   opacity: 1;
 }
+
+#game-grid .uk-card {
+  filter: grayscale(50%);
+  transition: 0.2s;
+}
+#game-grid .uk-card:hover {
+  cursor: pointer;
+  filter: grayscale(0%);
+}
