@@ -12138,6 +12138,20 @@ h1 {
   transition: 0.2s;
 }
 #game-grid .uk-card:hover {
-  cursor: pointer;
   filter: grayscale(0%);
+}
+#game-grid .uk-card:hover .game-details {
+  opacity: 1;
+  height: 80px;
+}
+#game-grid .uk-card:hover .game-details button {
+  display: block;
+}
+#game-grid .game-details {
+  opacity: 0;
+  height: 0px;
+  transition: 0.2s;
+}
+#game-grid .game-details button {
+  display: none;
 }
