@@ -437,6 +437,12 @@
 
         }
 
+        document.querySelector('#game-chooser').addEventListener('beforehide', (e) => {
+
+            e.target.querySelector('.uk-modal-body').scrollTop = 0;
+
+        });
+
         document.querySelector('#game-chooser').addEventListener('hidden', () => {
 
             chooseGame_manuallyClearFilter();
