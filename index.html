@@ -197,7 +197,7 @@
                         <form class="uk-flex" uk-grid>
                             <div class="uk-width-1-3">
                                 <label class="uk-form-label">I want my team to feel</label>
-                                <select class="uk-select filter-feel">
+                                <select class="uk-select filter-feel" onchange="chooseGame_filter(this)">
                                     <option uk-filter-control="filter: [data-feel*='0']; group: data-feel">-</option>
                                     <option uk-filter-control="filter: [data-feel*='1']; group: data-feel">Open and Invested</option>
                                     <option uk-filter-control="filter: [data-feel*='2']; group: data-feel">Focused and Driven</option>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="uk-width-1-3">
                                 <label class="uk-form-label">Time available</label>
-                                <select class="uk-select filter-time">
+                                <select class="uk-select filter-time" onchange="chooseGame_filter(this)">
                                     <option uk-filter-control="filter: [data-time*='0']; group: data-time">-</option>
                                     <option uk-filter-control="filter: [data-time*='1']; group: data-time">15 minutes</option>
                                     <option uk-filter-control="filter: [data-time*='2']; group: data-time">30 minutes</option>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="uk-width-1-3">
                                 <label class="uk-form-label">Group size</label>
-                                <select class="uk-select filter-size">
+                                <select class="uk-select filter-size" onchange="chooseGame_filter(this)">
                                     <option uk-filter-control="filter: [data-size*='0']; group: data-size">-</option>
                                     <option uk-filter-control="filter: [data-size*='1']; group: data-size">&#60; 20 people</option>
                                     <option uk-filter-control="filter: [data-size*='2']; group: data-size">20 - 50 people</option>
@@ -407,6 +407,16 @@
 
             e.setAttribute('uk-tooltip', 'Copied!');
             UIkit.tooltip(e).show();
+
+        }
+
+        function chooseGame_filter(e) {
+
+            // https://github.com/uikit/uikit/issues/3439
+
+            UIkit.filter('[uk-filter="target: #game-grid"]', { 
+                target: '#game-grid'
+            }).apply(e.options[e.selectedIndex]);
 
         }
 

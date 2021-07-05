@@ -12155,3 +12155,7 @@ h1 {
 #game-grid .game-details button {
   display: none;
 }
+
+.uk-dropdown-nav .uk-active {
+  display: none;
+}
