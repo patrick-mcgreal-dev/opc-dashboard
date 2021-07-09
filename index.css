@@ -12142,7 +12142,7 @@ h1 {
 }
 #game-grid .uk-card:hover .game-details {
   opacity: 1;
-  height: 80px;
+  height: 40px;
 }
 #game-grid .uk-card:hover .game-details button {
   display: block;
